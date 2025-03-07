@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFarm - Crop Monitoring</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?farm,agriculture') no-repeat center center/cover;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #28a745, #218838);
+            color: white;
+            padding: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #28a745;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            display: none;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+        }
+        section.active {
+            display: block;
+        }
+
+        /* Image Upload Box */
+        .upload-box {
+            border: 2px dashed #28a745;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            background: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .upload-box:hover {
+            background: #e8f5e9;
+        }
+
+        /* Tables */
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #28a745;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #218838, #1e7e34);
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🌱 SmartFarm - Crop Monitoring & Management 🌱</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('image-monitoring')">Image Monitoring</a>
+        <a onclick="showSection('pest-detection')">Pest Detection</a>
+        <a onclick="showSection('spoilage-detection')">Spoilage Detection</a>
+        <a onclick="showSection('vitamin-check')">Nutrient Analysis</a>
+        <a onclick="showSection('tasks')">Task Management</a>
+        <a onclick="showSection('weather')">Weather Advisory</a>
+        <a onclick="showSection('market')">Market Prices</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+        <h2>Welcome to SmartFarm</h2>
+        <p>Helping farmers track and manage their crops efficiently.</p>
+    </section>
+
+    <!-- Image Monitoring Section -->
+    <section id="image-monitoring">
+        <h2>Image Monitoring</h2>
+        <p>Upload images to track your crop health.</p>
+        <div class="upload-box">
+            <input type="file" accept="image/*">
+        </div>
+    </section>
+
+    <!-- Pest Detection Section -->
+    <section id="pest-detection">
+        <h2>Pest Detection</h2>
+        <p>Upload an image to detect pests affecting your crops.</p>
+        <div class="upload-box">
+            <input type="file" accept="image/*">
+        </div>
+    </section>
+
+    <!-- Spoilage Detection Section -->
+    <section id="spoilage-detection">
+        <h2>Spoilage Detection</h2>
+        <p>Identify spoilage in crops before it's too late.</p>
+        <div class="upload-box">
+            <input type="file" accept="image/*">
+        </div>
+    </section>
+
+    <!-- Vitamin Check Section -->
+    <section id="vitamin-check">
+        <h2>Vitamin & Nutrient Analysis</h2>
+        <p>Check if your plants have sufficient nutrients.</p>
+        <div class="upload-box">
+            <input type="file" accept="image/*">
+        </div>
+    </section>
+
+    <!-- Task Management Section -->
+    <section id="tasks">
+        <h2>Task Management</h2>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Irrigation</td>
+                <td>March 10, 2025</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>Fertilization</td>
+                <td>March 15, 2025</td>
+                <td>Completed</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Weather Advisory Section -->
+    <section id="weather">
+        <h2>Weather Advisory</h2>
+        <p>Check weather conditions before farming activities.</p>
+    </section>
+
+    <!-- Market Prices Section -->
+    <section id="market">
+        <h2>Market Prices</h2>
+        <table>
+            <tr>
+                <th>Crop</th>
+                <th>Current Price (per kg)</th>
+            </tr>
+            <tr>
+                <td>Wheat</td>
+                <td>$5</td>
+            </tr>
+            <tr>
+                <td>Rice</td>
+                <td>$4</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@smartfarm.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SmartFarm. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Section Navigation -->
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
